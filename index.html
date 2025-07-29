@@ -4,317 +4,125 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Texas Hold'em Freezeout - Temporada 03 de la Asociación Occidente de Poker en San Ramón, Alajuela, Costa Rica. Early Bird 7:15 PM con 10K fichas adicionales. Sigue el ranking y toda la info." />
+    <meta name="description" content="Texas Hold'em Freezeout - Temporada 03 de la Asociación Occidente de Poker en San Ramón, Alajuela, Costa Rica. Early Bird 7:15 PM con 10K fichas adicionales. Sigue el ranking y toda la info." />
     <meta name="keywords" content="poker, Texas Hold'em, Freezeout, AOP, Costa Rica, torneo, póker profesional" />
     <meta name="author" content="Asociación Occidente de Poker" />
     <meta name="theme-color" content="#000000" />
     <title>Texas Hold'em Freezeout - AOP Tournament</title>
-    <style>
-      /* Reset básico */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Texas Hold'em Freezeout - AOP Temporada 03" />
+    <meta property="og:description" content="Ranking y resultados de la Temporada 03 de la Asociación Occidente de Poker. San Ramón, Costa Rica. Early Bird 7:15 PM con 10K adicionales." />
+    <meta property="og:url" content="https://aopcr.github.io/temporada03/" />
+    <meta property="og:image" content="https://aopcr.github.io/temporada03/hero.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Texas Hold'em Freezeout - AOP Temporada 03" />
+    <meta name="twitter:description" content="Ranking y resultados de la Temporada 03 de la Asociación Occidente de Poker. San Ramón, Costa Rica. Early Bird 7:15 PM con 10K adicionales." />
+    <meta name="twitter:image" content="https://aopcr.github.io/temporada03/hero.webp" />
+
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         background-color: #000;
         color: #ddd;
         line-height: 1.6;
       }
-
-      a {
-        text-decoration: none;
-        color: #f1c40f;
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* Header */
+      a { text-decoration: none; color: #f1c40f; }
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
       header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        background: #111;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-        padding: 0.75rem 0;
+        position: fixed; top: 0; width: 100%; z-index: 1000; background: #111;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.7); padding: 0.75rem 0;
       }
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .logo {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #f1c40f;
-      }
-      .nav-links {
-        display: flex;
-        gap: 1.5rem;
-        list-style: none;
-      }
-      .nav-links a {
-        font-weight: 500;
-        transition: color 0.2s;
-      }
-      .nav-links a:hover {
-        color: #fff;
-      }
-      .mobile-menu {
-        display: none;
-        background: none;
-        border: none;
-        color: #ddd;
-        font-size: 1.5rem;
-      }
-
-      /* Hero */
-      .hero {
-        margin-top: 70px;
-        position: relative;
-        height: 90vh;
-        overflow: hidden;
-      }
+      nav { display: flex; justify-content: space-between; align-items: center; }
+      .logo { font-size: 1.8rem; font-weight: bold; color: #f1c40f; }
+      .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+      .nav-links a { font-weight: 500; transition: color 0.2s; }
+      .nav-links a:hover { color: #fff; }
+      .mobile-menu { display: none; background: none; border: none; color: #ddd; font-size: 1.5rem; }
+      .hero { margin-top: 70px; position: relative; height: 90vh; overflow: hidden; }
       .hero-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(0.5);
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        object-fit: cover; filter: brightness(0.5);
       }
       .hero-content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        color: #f1c40f;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 0 20px;
+        position: relative; z-index: 1; text-align: center; color: #f1c40f;
+        top: 50%; transform: translateY(-50%); padding: 0 20px;
       }
-      .hero-content h1 {
-        font-size: 3rem;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-      }
-      .hero-content p {
-        font-size: 1.2rem;
-        margin: 1rem 0;
-        color: #eee;
-      }
+      .hero-content h1 { font-size: 3rem; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); }
+      .hero-content p { font-size: 1.2rem; margin: 1rem 0; color: #eee; }
       .cta-button {
-        display: inline-block;
-        padding: 0.75rem 2rem;
-        border: 2px solid #f1c40f;
-        border-radius: 50px;
-        font-weight: bold;
-        transition: background 0.3s, transform 0.3s;
+        display: inline-block; padding: 0.75rem 2rem; border: 2px solid #f1c40f; border-radius: 50px;
+        font-weight: bold; transition: background 0.3s, transform 0.3s;
       }
-      .cta-button:hover {
-        background: #f1c40f;
-        color: #000;
-        transform: translateY(-2px);
-      }
-
-      /* Early Bird Banner */
-      .alert-banner {
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #f39c12;
-        color: #000;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        font-weight: bold;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-        z-index: 2;
-      }
-
-      /* WhatsApp button */
+      .cta-button:hover { background: #f1c40f; color: #000; transform: translateY(-2px); }
       .whatsapp-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1001;
+        position: fixed; bottom: 20px; right: 20px; display: flex;
+        align-items: center; justify-content: center; z-index: 1001;
       }
-      .whatsapp-btn img {
-        width: 48px;
-        height: 48px;
-      }
-
-      /* Tournament Info */
-      .tournament-info {
-        padding: 4rem 0;
-        background: #111;
-      }
-      .section-title {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-      .section-title h2 {
-        font-size: 2.5rem;
-        color: #f1c40f;
-      }
-      .section-title p {
-        color: #aaa;
-      }
+      .whatsapp-btn img { width: 48px; height: 48px; }
+      .tournament-info { padding: 4rem 0; background: #111; }
+      .section-title { text-align: center; margin-bottom: 2rem; }
+      .section-title h2 { font-size: 2.5rem; color: #f1c40f; }
+      .section-title p { color: #aaa; }
       .info-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
       }
       .info-card {
-        background: #1a1a1a;
-        padding: 1.5rem;
-        border-radius: 10px;
-        border-left: 4px solid #f1c40f;
-        transition: transform 0.3s;
+        background: #1a1a1a; padding: 1.5rem; border-radius: 10px;
+        border-left: 4px solid #f1c40f; transition: transform 0.3s;
       }
-      .info-card:hover {
-        transform: translateY(-5px);
-      }
-      .info-card h3 {
-        margin-bottom: 0.75rem;
-        color: #f1c40f;
-      }
-      .info-card p {
-        color: #ccc;
-      }
-
-      /* Rankings */
-      .rankings {
-        padding: 4rem 0;
-        background: #000;
-      }
+      .info-card:hover { transform: translateY(-5px); }
+      .info-card h3 { margin-bottom: 0.75rem; color: #f1c40f; }
+      .info-card p { color: #ccc; }
+      .rankings { padding: 4rem 0; background: #000; }
       .ranking-tabs {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-        margin-bottom: 2rem;
+        display: flex; flex-wrap: wrap; justify-content: center;
+        gap: 0.75rem; margin-bottom: 2rem;
       }
       .tab-button {
-        background: #1a1a1a;
-        border: 2px solid #333;
-        padding: 0.5rem 1.25rem;
-        border-radius: 25px;
-        cursor: pointer;
-        transition: all 0.3s;
-        color: #ddd;
+        background: #1a1a1a; border: 2px solid #333; padding: 0.5rem 1.25rem;
+        border-radius: 25px; cursor: pointer; transition: all 0.3s; color: #ddd;
       }
-      .tab-button.active {
-        background: #f1c40f;
-        border-color: #f1c40f;
-        color: #000;
-      }
-      .ranking-table {
-        display: none;
-        width: 100%;
-        overflow-x: auto;
-      }
-      .ranking-table.active {
-        display: block;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 2rem;
-      }
-      th,
-      td {
-        padding: 0.75rem 1rem;
-        text-align: left;
-        font-size: 0.95rem;
-      }
+      .tab-button.active { background: #f1c40f; border-color: #f1c40f; color: #000; }
+      .ranking-table { display: none; width: 100%; overflow-x: auto; }
+      .ranking-table.active { display: block; }
+      table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+      th, td { padding: 0.75rem 1rem; text-align: left; font-size: 0.95rem; }
       th {
-        background: #111;
-        color: #f1c40f;
-        position: sticky;
-        top: 0;
+        background: #111; color: #f1c40f; position: sticky; top: 0;
       }
-      td {
-        color: #ddd;
-      }
-      tr:nth-child(even) {
-        background: #1a1a1a;
-      }
-      tr:hover {
-        background: #222;
-      }
-      .position {
-        font-weight: bold;
-        color: #f1c40f;
-      }
-
-      /* Sponsors */
-      .sponsors {
-        padding: 4rem 0;
-        background: #111;
-      }
+      td { color: #ddd; }
+      tr:nth-child(even) { background: #1a1a1a; }
+      tr:hover { background: #222; }
+      .position { font-weight: bold; color: #f1c40f; }
+      .sponsors { padding: 4rem 0; background: #111; }
       .sponsors-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;
       }
       .sponsor-card {
-        background: #1a1a1a;
-        padding: 1.5rem;
-        border-radius: 10px;
-        text-align: center;
+        background: #1a1a1a; padding: 1.5rem; border-radius: 10px; text-align: center;
         transition: transform 0.3s;
       }
-      .sponsor-card:hover {
-        transform: translateY(-5px);
-      }
-
-      /* Footer */
+      .sponsor-card:hover { transform: translateY(-5px); }
       footer {
-        background: #000;
-        color: #777;
-        padding: 2rem 0;
-        text-align: center;
+        background: #000; color: #777; padding: 2rem 0; text-align: center;
         border-top: 1px solid #111;
       }
-      footer a {
-        color: #f1c40f;
-      }
-      footer p {
-        margin-top: 1rem;
-        font-size: 0.85rem;
-      }
-
-      /* Responsive */
+      footer a { color: #f1c40f; }
+      footer p { margin-top: 1rem; font-size: 0.85rem; }
       @media (max-width: 768px) {
         .nav-links {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          right: 0;
-          flex-direction: column;
-          background: #111;
-          gap: 1rem;
-          padding: 1rem;
+          display: none; position: absolute; top: 100%; left: 0; right: 0;
+          flex-direction: column; background: #111; gap: 1rem; padding: 1rem;
         }
-        .nav-links.active {
-          display: flex;
-        }
-        .mobile-menu {
-          display: block;
-        }
+        .nav-links.active { display: flex; }
+        .mobile-menu { display: block; }
       }
     </style>
   </head>
@@ -355,7 +163,7 @@
         class="whatsapp-btn"
         aria-label="WhatsApp"
         >
-    <img src="whatsapp.svg" alt="WhatsApp" />
+      <img src="whatsapp.svg" alt="WhatsApp" />
     </a>
 
     <!-- Tournament Info -->
@@ -366,7 +174,6 @@
           <p>Todo lo que necesitas saber sobre nuestro torneo</p>
         </div>
         <div class="info-grid">
-          <!-- Early Bird reemplaza al organizador -->
           <div class="info-card" style="border-left-color: #f39c12">
             <h3>🚨 Early Bird</h3>
             <p><strong>7:15 PM</strong><br />10K adicionales en su Stack</p>
@@ -441,22 +248,60 @@
         document.getElementById("navLinks").classList.toggle("active");
       });
 
-      // Datos de jugadores y fechas
-      const players = Array.from({ length: 30 }, (_, i) => ({
-        id: i + 1,
-        name: `Jugador #${String(i + 1).padStart(2, "0")}`,
-        // Aquí después puedes asignar puntos reales
-        pts: 0,
-      }));
+      // === DATOS DE TORNEO ===
 
-      const fechas = Array.from({ length: 10 }, (_, j) => ({
-        id: j + 1,
-        name: `Fecha ${j + 1}`,
-        // top9: objetos con nombre y puntos, listos para editar
-        top9: players.slice(0, 9).map((p) => ({ name: p.name, pts: 0 })),
-      }));
+      // Fecha 1 real
+      const fecha1Jugadores = [
+        { name: "Cristian", pts: 256 },
+        { name: "Martín Cubero", pts: 240 },
+        { name: "Jean", pts: 224 },
+        { name: "Lety", pts: 208 },
+        { name: "Ale Morera", pts: 192 },
+        { name: "Jose Murillo", pts: 176 },
+        { name: "Jackson", pts: 160 },
+        { name: "Edson Núñez", pts: 144 },
+        { name: "Dario", pts: 128 },
+        { name: "Yeison Méndez", pts: 112 },
+        { name: "Hazel Soto", pts: 96 },
+        { name: "Diego López", pts: 80 },
+        { name: "Paul Zamora", pts: 64 },
+        { name: "Meme", pts: 48 },
+        { name: "Queso", pts: 32 },
+        { name: "Efren", pts: 16 },
+      ];
 
-      // Crear pestañas: General + Fechas
+      // Fechas 2-10 con placeholders
+      const fechas = [
+        {
+          id: 1,
+          name: "Fecha 1",
+          jugadores: fecha1Jugadores,
+        },
+        ...Array.from({ length: 9 }, (_, j) => ({
+          id: j + 2,
+          name: `Fecha ${j + 2}`,
+          jugadores: Array.from({ length: 9 }, (_, i) => ({
+            name: `Jugador #${String(i + 1).padStart(2, "0")}`,
+            pts: 0,
+          })),
+        })),
+      ];
+
+      // === SUMAR PUNTOS GENERAL DINÁMICAMENTE ===
+      const jugadoresGeneral = {};
+      fechas.forEach((f) => {
+        f.jugadores.forEach((pl) => {
+          if (!jugadoresGeneral[pl.name]) {
+            jugadoresGeneral[pl.name] = { name: pl.name, pts: 0 };
+          }
+          jugadoresGeneral[pl.name].pts += pl.pts;
+        });
+      });
+      const jugadoresGeneralArr = Object.values(jugadoresGeneral)
+        .filter((p) => p.pts > 0) // Solo los que tienen puntos
+        .sort((a, b) => b.pts - a.pts || a.name.localeCompare(b.name));
+
+      // === TABS ===
       const tabsContainer = document.getElementById("tabs");
       const allTabs = [{ id: 0, name: "General" }].concat(fechas);
       allTabs.forEach((f, idx) => {
@@ -468,31 +313,23 @@
         tabsContainer.appendChild(btn);
       });
 
-      // Contenedor de tablas
       const tablesContainer = document.getElementById("tables");
 
-      // -------- Tabla General --------
-      // Ordena por pts desc, empate por name
-      const sorted = players
-        .slice()
-        .sort((a, b) => b.pts - a.pts || a.name.localeCompare(b.name));
-      const generalRows = sorted.map((p, i) => ({
+      // === TABLA GENERAL ===
+      const generalRows = jugadoresGeneralArr.map((p, i) => ({
         posición: i + 1,
         jugador: p.name,
         puntos: p.pts,
       }));
-      const tableGen = createTable(generalRows, [
-        "Posición",
-        "Jugador",
-        "Puntos",
-      ]);
+      const tableGen = createTable(generalRows, ["Posición", "Jugador", "Puntos"]);
       tableGen.id = "general";
       tableGen.classList.add("ranking-table", "active");
       tablesContainer.appendChild(tableGen);
 
-      // -------- Tablas por Fecha --------
+      // === TABLAS POR FECHA ===
       fechas.forEach((f) => {
-        const rows = f.top9.map((pl, i) => ({
+        // Mostrar todos los jugadores de la fecha, aunque sean más de 9
+        const rows = f.jugadores.map((pl, i) => ({
           posición: i + 1,
           jugador: pl.name,
           puntos: pl.pts,
@@ -503,7 +340,7 @@
         tablesContainer.appendChild(tbl);
       });
 
-      // Crea una tabla HTML a partir de datos y columnas
+      // === FUNCIONES ===
       function createTable(data, columns) {
         const wrapper = document.createElement("div");
         const table = document.createElement("table");
@@ -534,7 +371,6 @@
         return wrapper;
       }
 
-      // Maneja cambio de tabla cuando se hace click en una pestaña
       function switchTable(e) {
         document
           .querySelectorAll(".tab-button")
