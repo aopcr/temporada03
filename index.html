@@ -390,7 +390,7 @@
         "#1": s.wins,
         "top 3": s.podiums, // coincide con col "Top 3" (createTable hace toLowerCase)
       }));
-      const tableGen = createTable(generalRows, ["Posición", "Jugador", "Puntos", "#1", "Top 3"]);
+      const tableGen = createTable(generalRows, ["#", "Jugador", "Pts", "#1", "Top 3"]);
       tableGen.id = "general";
       tableGen.classList.add("ranking-table", "active");
 
