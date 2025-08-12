@@ -13,7 +13,7 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Texas Hold'em Freezeout - AOP Temporada 03" />
-    <meta property="og:description" content="Ranking y resultados de la Temporada 03 de la Asociación Occidente de Poker. San Ramón, Costa Rica. Early Bird 7:15 PM con 10K adicionales." />
+    <meta property="og:description" content="Ranking y resultados de la Temporada 03 de la Asociación Occidente de Poker. San Ramón, Costa Rica. Early Bird 7:15 PM con 10K adicionales." />
     <meta property="og:url" content="https://aopcr.github.io/temporada03/" />
     <meta property="og:image" content="https://aopcr.github.io/temporada03/hero.webp" />
     <meta property="og:image:width" content="1200" />
@@ -22,7 +22,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Texas Hold'em Freezeout - AOP Temporada 03" />
-    <meta name="twitter:description" content="Ranking y resultados de la Temporada 03 de la Asociación Occidente de Poker. San Ramón, Costa Rica. Early Bird 7:15 PM con 10K adicionales." />
+    <meta name="twitter:description" content="Ranking y resultados de la Temporada 03 de la Asociación Occidente de Poker. San Ramón, Costa Rica. Early Bird 7:15 PM con 10K adicionales." />
     <meta name="twitter:image" content="https://aopcr.github.io/temporada03/hero.webp" />
 
     <style>
@@ -92,7 +92,7 @@
       .tab-button.active { background: #f1c40f; border-color: #f1c40f; color: #000; }
       .ranking-table { display: none; width: 100%; overflow-x: auto; }
       .ranking-table.active { display: block; }
-      table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+      table { width: 100%; border-collapse: collapse; margin-bottom: 0.5rem; }
       th, td { padding: 0.75rem 1rem; text-align: left; font-size: 0.95rem; }
       th {
         background: #111; color: #f1c40f; position: sticky; top: 0;
@@ -101,6 +101,11 @@
       tr:nth-child(even) { background: #1a1a1a; }
       tr:hover { background: #222; }
       .position { font-weight: bold; color: #f1c40f; }
+      .tie-note {
+        font-size: 0.9rem;
+        color: #aaa;
+        margin: 0.5rem 0 2rem;
+      }
       .sponsors { padding: 4rem 0; background: #111; }
       .sponsors-grid {
         display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;
@@ -176,7 +181,7 @@
         <div class="info-grid">
           <div class="info-card" style="border-left-color: #f39c12">
             <h3>🚨 Early Bird</h3>
-            <p><strong>7:15 PM</strong><br />10K adicionales en su Stack</p>
+            <p><strong>7:15 PM</strong><br />10K adicionales en su Stack</p>
           </div>
           <div class="info-card">
             <h3>📍 Ubicación</h3>
@@ -270,7 +275,7 @@
         { name: "Efrén", pts: 16 },
       ];
 
-      // Fechas 2-10 con resultados reales para Fecha 2
+      // Fechas 2-10 con resultados reales para Fecha 2 y 3
       const fechas = [
         {
           id: 1,
@@ -334,19 +339,34 @@
         })),
       ];
 
-      // === SUMAR PUNTOS GENERAL DINÁMICAMENTE ===
-      const jugadoresGeneral = {};
-      fechas.forEach((f) => {
-        f.jugadores.forEach((pl) => {
-          if (!jugadoresGeneral[pl.name]) {
-            jugadoresGeneral[pl.name] = { name: pl.name, pts: 0 };
-          }
-          jugadoresGeneral[pl.name].pts += pl.pts;
+      // === STATS GENERALES: puntos, #1, podios ===
+      function computeGeneralStats(fechas) {
+        const map = new Map(); // name -> { name, points, wins, podiums }
+        fechas.forEach((f) => {
+          f.jugadores.forEach((pl, idx) => {
+            if (pl.pts <= 0) return; // ignora ausentes/placeholder
+            const pos = idx + 1; // se asume array en orden de resultado
+            const s = map.get(pl.name) || { name: pl.name, points: 0, wins: 0, podiums: 0 };
+            s.points += pl.pts;
+            if (pos === 1) s.wins += 1;
+            if (pos <= 3) s.podiums += 1;
+            map.set(pl.name, s);
+          });
         });
-      });
-      const jugadoresGeneralArr = Object.values(jugadoresGeneral)
-        .filter((p) => p.pts > 0) // Solo los que tienen puntos
-        .sort((a, b) => b.pts - a.pts || a.name.localeCompare(b.name));
+        return Array.from(map.values());
+      }
+
+      // Orden requerido: puntos DESC, #1 DESC, podios DESC, nombre ASC
+      function generalComparator(a, b) {
+        return (
+          b.points - a.points ||
+          b.wins - a.wins ||
+          b.podiums - a.podiums ||
+          a.name.localeCompare(b.name, "es", { sensitivity: "base" })
+        );
+      }
+
+      const generalStats = computeGeneralStats(fechas).sort(generalComparator);
 
       // === TABS ===
       const tabsContainer = document.getElementById("tabs");
@@ -362,15 +382,26 @@
 
       const tablesContainer = document.getElementById("tables");
 
-      // === TABLA GENERAL ===
-      const generalRows = jugadoresGeneralArr.map((p, i) => ({
+      // === TABLA GENERAL (con #1 y Top-3) ===
+      const generalRows = generalStats.map((s, i) => ({
         posición: i + 1,
-        jugador: p.name,
-        puntos: p.pts,
+        jugador: s.name,
+        puntos: s.points,
+        "#1": s.wins,
+        "top 3": s.podiums, // coincide con col "Top 3" (createTable hace toLowerCase)
       }));
-      const tableGen = createTable(generalRows, ["Posición", "Jugador", "Puntos"]);
+      const tableGen = createTable(generalRows, ["Posición", "Jugador", "Puntos", "#1", "Top 3"]);
       tableGen.id = "general";
       tableGen.classList.add("ranking-table", "active");
+
+      // Nota de criterios de desempate (se muestra solo en General)
+      const tieNote = document.createElement("div");
+      tieNote.className = "tie-note";
+      tieNote.innerHTML = `
+        <strong>Criterios de desempate:</strong>
+        Puntos &rarr; #1 (más primeros lugares) &rarr; Top&nbsp;3 (más podios) &rarr; Nombre (A–Z).
+      `;
+      tableGen.appendChild(tieNote);
       tablesContainer.appendChild(tableGen);
 
       // === TABLAS POR FECHA ===
@@ -422,9 +453,11 @@
           .querySelectorAll(".tab-button")
           .forEach((b) => b.classList.remove("active"));
         e.currentTarget.classList.add("active");
+
         document
           .querySelectorAll(".ranking-table")
           .forEach((tbl) => tbl.classList.remove("active"));
+
         const targetId = e.currentTarget.dataset.target;
         document.getElementById(targetId).classList.add("active");
       }
