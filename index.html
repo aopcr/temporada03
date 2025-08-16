@@ -4,108 +4,277 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Texas Hold'em Freezeout - Temporada 03 de la Asociación Occidente de Poker en San Ramón, Alajuela, Costa Rica. Early Bird 7:15 PM con 10K fichas adicionales. Sigue el ranking y toda la info." />
-    <meta name="keywords" content="poker, Texas Hold'em, Freezeout, AOP, Costa Rica, torneo, póker profesional" />
+    <meta
+      name="description"
+      content="Texas Hold'em Freezeout - Temporada 03 de la Asociación Occidente de Poker en San Ramón, Alajuela, Costa Rica. Early Bird 7:15 PM con 10K fichas adicionales. Sigue el ranking y toda la info."
+    />
+    <meta
+      name="keywords"
+      content="poker, Texas Hold'em, Freezeout, AOP, Costa Rica, torneo, póker profesional"
+    />
     <meta name="author" content="Asociación Occidente de Poker" />
     <meta name="theme-color" content="#000000" />
     <title>Texas Hold'em Freezeout - AOP Tournament</title>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Texas Hold'em Freezeout - AOP Temporada 03" />
-    <meta property="og:description" content="Ranking y resultados de la Temporada 03 de la Asociación Occidente de Poker. San Ramón, Costa Rica. Early Bird 7:15 PM con 10K adicionales." />
+    <meta
+      property="og:title"
+      content="Texas Hold'em Freezeout - AOP Temporada 03"
+    />
+    <meta
+      property="og:description"
+      content="Ranking y resultados de la Temporada 03 de la Asociación Occidente de Poker. San Ramón, Costa Rica. Early Bird 7:15 PM con 10K adicionales."
+    />
     <meta property="og:url" content="https://aopcr.github.io/temporada03/" />
-    <meta property="og:image" content="https://aopcr.github.io/temporada03/hero.webp" />
+    <meta
+      property="og:image"
+      content="https://aopcr.github.io/temporada03/hero.webp"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Texas Hold'em Freezeout - AOP Temporada 03" />
-    <meta name="twitter:description" content="Ranking y resultados de la Temporada 03 de la Asociación Occidente de Poker. San Ramón, Costa Rica. Early Bird 7:15 PM con 10K adicionales." />
-    <meta name="twitter:image" content="https://aopcr.github.io/temporada03/hero.webp" />
+    <meta
+      name="twitter:title"
+      content="Texas Hold'em Freezeout - AOP Temporada 03"
+    />
+    <meta
+      name="twitter:description"
+      content="Ranking y resultados de la Temporada 03 de la Asociación Occidente de Poker. San Ramón, Costa Rica. Early Bird 7:15 PM con 10K adicionales."
+    />
+    <meta
+      name="twitter:image"
+      content="https://aopcr.github.io/temporada03/hero.webp"
+    />
 
     <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
         background-color: #000;
         color: #ddd;
         line-height: 1.6;
       }
-      body.no-scroll { overflow: hidden; }
-      a { text-decoration: none; color: #f1c40f; }
-      .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-      header {
-        position: fixed; top: 0; width: 100%; z-index: 1000; background: #111;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.7); padding: 0.75rem 0;
+      body.no-scroll {
+        overflow: hidden;
       }
-      nav { display: flex; justify-content: space-between; align-items: center; }
-      .logo { font-size: 1.8rem; font-weight: bold; color: #f1c40f; }
-      .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-      .nav-links a { font-weight: 500; transition: color 0.2s; }
-      .nav-links a:hover { color: #fff; }
-      .mobile-menu { display: none; background: none; border: none; color: #ddd; font-size: 1.5rem; }
-      .hero { margin-top: 70px; position: relative; height: 90vh; overflow: hidden; }
+      a {
+        text-decoration: none;
+        color: #f1c40f;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: #111;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        padding: 0.75rem 0;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #f1c40f;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: #fff;
+      }
+      .mobile-menu {
+        display: none;
+        background: none;
+        border: none;
+        color: #ddd;
+        font-size: 1.5rem;
+      }
+      .hero {
+        margin-top: 70px;
+        position: relative;
+        height: 90vh;
+        overflow: hidden;
+      }
       .hero-img {
-        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-        object-fit: cover; filter: brightness(0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.5);
       }
       .hero-content {
-        position: relative; z-index: 1; text-align: center; color: #f1c40f;
-        top: 50%; transform: translateY(-50%); padding: 0 20px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #f1c40f;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0 20px;
       }
-      .hero-content h1 { font-size: 3rem; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); }
-      .hero-content p { font-size: 1.2rem; margin: 1rem 0; color: #eee; }
+      .hero-content h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        color: #eee;
+      }
       .cta-button {
-        display: inline-block; padding: 0.75rem 2rem; border: 2px solid #f1c40f; border-radius: 50px;
-        font-weight: bold; transition: background 0.3s, transform 0.3s;
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        border: 2px solid #f1c40f;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: background 0.3s, transform 0.3s;
       }
-      .cta-button:hover { background: #f1c40f; color: #000; transform: translateY(-2px); }
+      .cta-button:hover {
+        background: #f1c40f;
+        color: #000;
+        transform: translateY(-2px);
+      }
 
       .whatsapp-btn {
-        position: fixed; bottom: 20px; right: 20px; display: flex;
-        align-items: center; justify-content: center; z-index: 1001;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
       }
-      .whatsapp-btn img { width: 48px; height: 48px; }
+      .whatsapp-btn img {
+        width: 48px;
+        height: 48px;
+      }
 
-      .tournament-info { padding: 3rem 0; background: #111; }
-      .section-title { text-align: center; margin-bottom: 2rem; }
-      .section-title h2 { font-size: 2.5rem; color: #f1c40f; }
-      .section-title p { color: #aaa; }
+      .tournament-info {
+        padding: 3rem 0;
+        background: #111;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: #f1c40f;
+      }
+      .section-title p {
+        color: #aaa;
+      }
 
       .info-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
       }
       .info-card {
-        background: #1a1a1a; padding: 1.5rem; border-radius: 10px;
-        border-left: 4px solid #f1c40f; transition: transform 0.3s;
+        background: #1a1a1a;
+        padding: 1.5rem;
+        border-radius: 10px;
+        border-left: 4px solid #f1c40f;
+        transition: transform 0.3s;
       }
-      .info-card:hover { transform: translateY(-5px); }
-      .info-card h3 { margin-bottom: 0.75rem; color: #f1c40f; }
-      .info-card p { color: #ccc; }
+      .info-card:hover {
+        transform: translateY(-5px);
+      }
+      .info-card h3 {
+        margin-bottom: 0.75rem;
+        color: #f1c40f;
+      }
+      .info-card p {
+        color: #ccc;
+      }
 
-      .rankings { padding: 3rem 0; background: #000; }
+      .rankings {
+        padding: 3rem 0;
+        background: #000;
+      }
       .ranking-tabs {
-        display: flex; flex-wrap: wrap; justify-content: center;
-        gap: 0.75rem; margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
       }
       .tab-button {
-        background: #1a1a1a; border: 2px solid #333; padding: 0.5rem 1.25rem;
-        border-radius: 25px; cursor: pointer; transition: all 0.3s; color: #ddd;
+        background: #1a1a1a;
+        border: 2px solid #333;
+        padding: 0.5rem 1.25rem;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: #ddd;
       }
-      .tab-button.active { background: #f1c40f; border-color: #f1c40f; color: #000; }
-      .ranking-table { display: none; width: 100%; overflow-x: auto; }
-      .ranking-table.active { display: block; }
-      table { width: 100%; border-collapse: collapse; margin-bottom: 0.5rem; }
-      th, td { padding: 0.75rem 1rem; text-align: left; font-size: 0.95rem; }
+      .tab-button.active {
+        background: #f1c40f;
+        border-color: #f1c40f;
+        color: #000;
+      }
+      .ranking-table {
+        display: none;
+        width: 100%;
+        overflow-x: auto;
+      }
+      .ranking-table.active {
+        display: block;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 0.5rem;
+      }
+      th,
+      td {
+        padding: 0.75rem 1rem;
+        text-align: left;
+        font-size: 0.95rem;
+      }
       th {
-        background: #111; color: #f1c40f; position: sticky; top: 0;
+        background: #111;
+        color: #f1c40f;
+        position: sticky;
+        top: 0;
       }
-      td { color: #ddd; }
-      tr:nth-child(even) { background: #1a1a1a; }
-      tr:hover { background: #222; }
-      .position { font-weight: bold; color: #f1c40f; }
+      td {
+        color: #ddd;
+      }
+      tr:nth-child(even) {
+        background: #1a1a1a;
+      }
+      tr:hover {
+        background: #222;
+      }
+      .position {
+        font-weight: bold;
+        color: #f1c40f;
+      }
 
       /* Winner banner */
       .winner-block {
@@ -142,8 +311,14 @@
         border: 2px solid #f1c40f;
         cursor: zoom-in;
       }
-      .winner-meta strong { color: #fff; display: block; }
-      .winner-meta span { color: #bbb; font-size: 0.9rem; }
+      .winner-meta strong {
+        color: #fff;
+        display: block;
+      }
+      .winner-meta span {
+        color: #bbb;
+        font-size: 0.9rem;
+      }
 
       .tie-note {
         font-size: 0.9rem;
@@ -152,12 +327,15 @@
       }
 
       /* Previous champions & Trophy */
-      .winners-history, .trophy {
+      .winners-history,
+      .trophy {
         padding: 3rem 0;
         background: #111;
       }
       .cards-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.25rem;
       }
       .card {
         background: #1a1a1a;
@@ -167,7 +345,9 @@
         text-align: center;
         transition: transform 0.3s;
       }
-      .card:hover { transform: translateY(-4px); }
+      .card:hover {
+        transform: translateY(-4px);
+      }
       .card img {
         width: 100%;
         height: 180px;
@@ -176,8 +356,14 @@
         border: 2px solid #333;
         cursor: zoom-in;
       }
-      .card h3 { color: #f1c40f; margin-top: 0.75rem; }
-      .card p { color: #ccc; margin-top: 0.25rem; }
+      .card h3 {
+        color: #f1c40f;
+        margin-top: 0.75rem;
+      }
+      .card p {
+        color: #ccc;
+        margin-top: 0.25rem;
+      }
 
       .trophy-figure {
         max-width: 720px;
@@ -202,44 +388,75 @@
         font-size: 0.95rem;
       }
 
-      .sponsors { padding: 3rem 0; background: #111; }
+      .sponsors {
+        padding: 3rem 0;
+        background: #111;
+      }
       .sponsors-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
       }
       .sponsor-card {
-        background: #1a1a1a; padding: 1.5rem; border-radius: 10px; text-align: center;
+        background: #1a1a1a;
+        padding: 1.5rem;
+        border-radius: 10px;
+        text-align: center;
         transition: transform 0.3s;
       }
-      .sponsor-card:hover { transform: translateY(-5px); }
+      .sponsor-card:hover {
+        transform: translateY(-5px);
+      }
 
       footer {
-        background: #000; color: #777; padding: 2rem 0; text-align: center;
+        background: #000;
+        color: #777;
+        padding: 2rem 0;
+        text-align: center;
         border-top: 1px solid #111;
       }
-      footer a { color: #f1c40f; }
-      footer p { margin-top: 1rem; font-size: 0.85rem; }
+      footer a {
+        color: #f1c40f;
+      }
+      footer p {
+        margin-top: 1rem;
+        font-size: 0.85rem;
+      }
 
       @media (max-width: 768px) {
         .nav-links {
-          display: none; position: absolute; top: 100%; left: 0; right: 0;
-          flex-direction: column; background: #111; gap: 1rem; padding: 1rem;
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          background: #111;
+          gap: 1rem;
+          padding: 1rem;
         }
-        .nav-links.active { display: flex; }
-        .mobile-menu { display: block; }
+        .nav-links.active {
+          display: flex;
+        }
+        .mobile-menu {
+          display: block;
+        }
       }
 
       /* Lightbox / Modal */
       .lightbox {
         position: fixed;
         inset: 0;
-        background: rgba(0,0,0,0.88);
+        background: rgba(0, 0, 0, 0.88);
         display: none;
         align-items: center;
         justify-content: center;
         z-index: 3000;
         padding: 1rem;
       }
-      .lightbox.open { display: flex; }
+      .lightbox.open {
+        display: flex;
+      }
       .lightbox-inner {
         max-width: 92vw;
         max-height: 88vh;
@@ -251,7 +468,7 @@
         object-fit: contain;
         border-radius: 10px;
         border: 2px solid #333;
-        box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
       }
       .lightbox-caption {
         color: #ccc;
@@ -262,7 +479,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(17,17,17,0.75);
+        background: rgba(17, 17, 17, 0.75);
         border: 1px solid #333;
         color: #f1c40f;
         width: 44px;
@@ -273,21 +490,39 @@
         cursor: pointer;
         user-select: none;
       }
-      .lightbox-btn:hover { background: rgba(17,17,17,0.95); }
-      .lightbox-prev { left: 20px; }
-      .lightbox-next { right: 20px; }
+      .lightbox-btn:hover {
+        background: rgba(17, 17, 17, 0.95);
+      }
+      .lightbox-prev {
+        left: 20px;
+      }
+      .lightbox-next {
+        right: 20px;
+      }
       .lightbox-close {
         position: absolute;
-        top: 20px; right: 20px;
-        width: 40px; height: 40px;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         border: 1px solid #333;
-        background: rgba(17,17,17,0.8);
+        background: rgba(17, 17, 17, 0.8);
         color: #f1c40f;
         font-size: 1.2rem;
         cursor: pointer;
       }
-      .lightbox-close:hover { background: rgba(17,17,17,0.95); }
+      .lightbox-close:hover {
+        background: rgba(17, 17, 17, 0.95);
+      }
+
+      .trophy-figure video.trophy-video {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid #333;
+      }
     </style>
   </head>
   <body>
@@ -322,11 +557,11 @@
 
     <!-- WhatsApp Floating Button -->
     <a
-        href="https://wa.me/50688168868?text=Quiero%20más%20info%20por%20favor"
-        target="_blank"
-        class="whatsapp-btn"
-        aria-label="WhatsApp"
-        >
+      href="https://wa.me/50688168868?text=Quiero%20más%20info%20por%20favor"
+      target="_blank"
+      class="whatsapp-btn"
+      aria-label="WhatsApp"
+    >
       <img src="whatsapp.svg" alt="WhatsApp" />
     </a>
 
@@ -423,15 +658,16 @@
           <p>El premio al campeón de la presente temporada</p>
         </div>
         <figure class="trophy-figure">
-          <img
-            src="trofeo.webp"
-            alt="Trofeo Temporada 03"
-            data-zoomable="true"
-            data-zoom-src="trofeo.webp"
-            data-caption="Trofeo — Temporada 03"
-          />
+          <video
+            src="videohero.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="trophy-video"
+          ></video>
           <figcaption>
-            Diseño representativo. La imagen será actualizada con la fotografía oficial del trofeo.
+            Trofeo Campeón Temporada 03 AOP.
           </figcaption>
         </figure>
       </div>
@@ -463,14 +699,32 @@
     </footer>
 
     <!-- Lightbox / Modal -->
-    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <div
+      class="lightbox"
+      id="lightbox"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
       <button class="lightbox-close" id="lbClose" aria-label="Cerrar">×</button>
-      <button class="lightbox-btn lightbox-prev" id="lbPrev" aria-label="Anterior">‹</button>
+      <button
+        class="lightbox-btn lightbox-prev"
+        id="lbPrev"
+        aria-label="Anterior"
+      >
+        ‹
+      </button>
       <div class="lightbox-inner">
         <img id="lbImg" class="lightbox-img" alt="" />
         <div id="lbCaption" class="lightbox-caption"></div>
       </div>
-      <button class="lightbox-btn lightbox-next" id="lbNext" aria-label="Siguiente">›</button>
+      <button
+        class="lightbox-btn lightbox-next"
+        id="lbNext"
+        aria-label="Siguiente"
+      >
+        ›
+      </button>
     </div>
 
     <script>
@@ -573,7 +827,12 @@
           f.jugadores.forEach((pl, idx) => {
             if (pl.pts <= 0) return; // ignora ausentes/placeholder
             const pos = idx + 1; // se asume array en orden de resultado
-            const s = map.get(pl.name) || { name: pl.name, points: 0, wins: 0, podiums: 0 };
+            const s = map.get(pl.name) || {
+              name: pl.name,
+              points: 0,
+              wins: 0,
+              podiums: 0,
+            };
             s.points += pl.pts;
             if (pos === 1) s.wins += 1;
             if (pos <= 3) s.podiums += 1;
@@ -617,7 +876,13 @@
         "🏆": s.wins,
         "top 3": s.podiums, // createTable usa toLowerCase() para mapear "Top 3"
       }));
-      const tableGen = createTable(generalRows, ["#", "Jugador", "Pts", "🏆", "Top 3"]);
+      const tableGen = createTable(generalRows, [
+        "#",
+        "Jugador",
+        "Pts",
+        "🏆",
+        "Top 3",
+      ]);
       tableGen.id = "general";
       tableGen.classList.add("ranking-table", "active");
 
@@ -685,11 +950,14 @@
       function createWinnerBlock(fecha) {
         // Detecta ganadores (maneja empates); si todos 0 => placeholder
         let maxPts = 0;
-        fecha.jugadores.forEach(j => { if (j.pts > maxPts) maxPts = j.pts; });
+        fecha.jugadores.forEach((j) => {
+          if (j.pts > maxPts) maxPts = j.pts;
+        });
 
-        const winners = maxPts > 0
-          ? fecha.jugadores.filter(j => j.pts === maxPts)
-          : [{ name: "Próximamente", pts: 0, placeholder: true }];
+        const winners =
+          maxPts > 0
+            ? fecha.jugadores.filter((j) => j.pts === maxPts)
+            : [{ name: "Próximamente", pts: 0, placeholder: true }];
 
         const block = document.createElement("div");
         block.className = "winner-block";
@@ -702,14 +970,16 @@
         const grid = document.createElement("div");
         grid.className = "winner-grid";
 
-        winners.forEach(w => {
+        winners.forEach((w) => {
           const item = document.createElement("div");
           item.className = "winner-item";
 
           const img = document.createElement("img");
           img.className = "winner-img";
           img.src = fecha.img || "hero02.webp";
-          img.alt = w.placeholder ? `Ganador(a) ${fecha.name} - Próximamente` : `Ganador(a) ${fecha.name} - ${w.name}`;
+          img.alt = w.placeholder
+            ? `Ganador(a) ${fecha.name} - Próximamente`
+            : `Ganador(a) ${fecha.name} - ${w.name}`;
           // Marcar para lightbox:
           img.setAttribute("data-zoomable", "true");
           img.setAttribute("data-zoom-src", img.src);
@@ -758,19 +1028,21 @@
       }
 
       // === LIGHTBOX / MODAL ===
-      const lightbox = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lbImg');
-      const lbCaption = document.getElementById('lbCaption');
-      const lbPrev = document.getElementById('lbPrev');
-      const lbNext = document.getElementById('lbNext');
-      const lbClose = document.getElementById('lbClose');
+      const lightbox = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lbImg");
+      const lbCaption = document.getElementById("lbCaption");
+      const lbPrev = document.getElementById("lbPrev");
+      const lbNext = document.getElementById("lbNext");
+      const lbClose = document.getElementById("lbClose");
 
       let zoomables = [];
       let currentIndex = -1;
 
       function collectZoomables() {
-        zoomables = Array.from(document.querySelectorAll('[data-zoomable="true"]'));
-        zoomables.forEach((el, idx) => el.dataset.zoomIndex = idx);
+        zoomables = Array.from(
+          document.querySelectorAll('[data-zoomable="true"]')
+        );
+        zoomables.forEach((el, idx) => (el.dataset.zoomIndex = idx));
       }
 
       function openLightboxByIndex(idx) {
@@ -778,22 +1050,22 @@
         currentIndex = idx;
         const el = zoomables[currentIndex];
         const src = el.dataset.zoomSrc || el.src;
-        const caption = el.dataset.caption || el.alt || '';
+        const caption = el.dataset.caption || el.alt || "";
         lbImg.src = src;
         lbImg.alt = caption;
         lbCaption.textContent = caption;
-        lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('no-scroll');
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("no-scroll");
       }
 
       function closeLightbox() {
-        lightbox.classList.remove('open');
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('no-scroll');
-        lbImg.src = '';
-        lbImg.alt = '';
-        lbCaption.textContent = '';
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("no-scroll");
+        lbImg.src = "";
+        lbImg.alt = "";
+        lbCaption.textContent = "";
         currentIndex = -1;
       }
 
@@ -807,31 +1079,33 @@
       }
 
       // Delegación de evento para abrir (incluye los creados dinámicamente)
-      document.addEventListener('click', (e) => {
+      document.addEventListener("click", (e) => {
         const target = e.target;
         if (target && target.matches('[data-zoomable="true"]')) {
           if (!zoomables.length) collectZoomables();
-          const idx = Number(target.dataset.zoomIndex ?? zoomables.indexOf(target));
+          const idx = Number(
+            target.dataset.zoomIndex ?? zoomables.indexOf(target)
+          );
           openLightboxByIndex(idx);
         }
       });
 
       // Controles
-      lbClose.addEventListener('click', closeLightbox);
-      lbPrev.addEventListener('click', showPrev);
-      lbNext.addEventListener('click', showNext);
+      lbClose.addEventListener("click", closeLightbox);
+      lbPrev.addEventListener("click", showPrev);
+      lbNext.addEventListener("click", showNext);
 
       // Cerrar al hacer clic en fondo
-      lightbox.addEventListener('click', (e) => {
+      lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) closeLightbox();
       });
 
       // Teclado
-      document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('open')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') showPrev();
-        if (e.key === 'ArrowRight') showNext();
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("open")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") showPrev();
+        if (e.key === "ArrowRight") showNext();
       });
 
       // Inicializar zoomables después de construir DOM dinámico
