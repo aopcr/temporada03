@@ -830,9 +830,28 @@
             { name: "Chespi", pts: 13 }
           ],
         },
-        ...Array.from({ length: 6 }, (_, j) => ({
-          id: j + 5,
-          name: `Fecha ${j + 5}`,
+        {
+          id: 5,
+          name: "Fecha 5",
+          // img: "ganadores/04.webp",
+          jugadores: [
+            { name: "Meme", pts: 144 },
+            { name: "Cristian", pts: 132 },
+            { name: "Dario", pts: 120 },
+            { name: "Martín Cubero", pts: 108 },
+            { name: "Brandon", pts: 96 },
+            { name: "Lety", pts: 84 },
+            { name: "Jackson", pts: 72 },
+            { name: "Yeison Méndez", pts: 60 },
+            { name: "Jose Murillo", pts: 48 },
+            { name: "Queso", pts: 36 },
+            { name: "Dorling", pts: 24 },
+            { name: "Kevin", pts: 12 }
+          ],
+        },
+        ...Array.from({ length: 5 }, (_, j) => ({
+          id: j + 6,
+          name: `Fecha ${j + 6}`,
           jugadores: Array.from({ length: 9 }, (_, i) => ({
             name: `Jugador #${String(i + 1).padStart(2, "0")}`,
             pts: 0,
