@@ -830,34 +830,52 @@
             { name: "Chespi", pts: 13 }
           ],
         },
-        {
-          id: 5,
-          name: "Fecha 5",
-          img: "ganadores/05.webp",
-          jugadores: [
-            { name: "Meme", pts: 144 },
-            { name: "Cristian", pts: 132 },
-            { name: "Dario", pts: 120 },
-            { name: "Martín Cubero", pts: 108 },
-            { name: "Brandon", pts: 96 },
-            { name: "Lety", pts: 84 },
-            { name: "Jackson", pts: 72 },
-            { name: "Yeison Méndez", pts: 60 },
-            { name: "Jose Murillo", pts: 48 },
-            { name: "Queso", pts: 36 },
-            { name: "Dorling", pts: 24 },
-            { name: "Kevin", pts: 12 }
-          ],
-        },
-        ...Array.from({ length: 5 }, (_, j) => ({
-          id: j + 6,
-          name: `Fecha ${j + 6}`,
-          jugadores: Array.from({ length: 9 }, (_, i) => ({
-            name: `Jugador #${String(i + 1).padStart(2, "0")}`,
-            pts: 0,
+          {
+            id: 5,
+            name: "Fecha 5",
+            img: "ganadores/05.webp",
+            jugadores: [
+              { name: "Meme", pts: 144 },
+              { name: "Cristian", pts: 132 },
+              { name: "Dario", pts: 120 },
+              { name: "Martín Cubero", pts: 108 },
+              { name: "Brandon", pts: 96 },
+              { name: "Lety", pts: 84 },
+              { name: "Jackson", pts: 72 },
+              { name: "Yeison Méndez", pts: 60 },
+              { name: "Jose Murillo", pts: 48 },
+              { name: "Queso", pts: 36 },
+              { name: "Dorling", pts: 24 },
+              { name: "Kevin", pts: 12 },
+            ],
+          },
+          {
+            id: 6,
+            name: "Fecha 6",
+            img: "ganadores/06.webp",
+            jugadores: [
+              { name: "Lety", pts: 121 },
+              { name: "Dario", pts: 110 },
+              { name: "Queso", pts: 99 },
+              { name: "dei", pts: 88 },
+              { name: "Dagaz", pts: 77 },
+              { name: "Chespi", pts: 66 },
+              { name: "Jose Murillo", pts: 55 },
+              { name: "Meme", pts: 44 },
+              { name: "Cristian", pts: 33 },
+              { name: "Yeison Méndez", pts: 22 },
+              { name: "Fantasma", pts: 11 },
+            ],
+          },
+          ...Array.from({ length: 4 }, (_, j) => ({
+            id: j + 7,
+            name: `Fecha ${j + 7}`,
+            jugadores: Array.from({ length: 9 }, (_, i) => ({
+              name: `Jugador #${String(i + 1).padStart(2, "0")}`,
+              pts: 0,
+            })),
           })),
-        })),
-      ];
+        ];
 
       // === STATS GENERALES: puntos, #1, podios ===
       function computeGeneralStats(fechas) {
