@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -867,9 +868,24 @@
               { name: "Fantasma", pts: 11 },
             ],
           },
-          ...Array.from({ length: 4 }, (_, j) => ({
-            id: j + 7,
-            name: `Fecha ${j + 7}`,
+          ,
+          {
+            id: 7,
+            name: "Fecha 7",
+            img: "ganadores/07.webp",
+            jugadores: [
+              { name: "Lety", pts: 49 },
+              { name: "Cristian", pts: 42 },
+              { name: "Queso", pts: 35 },
+              { name: "Ale Morera", pts: 28 },
+              { name: "Coco", pts: 21 },
+              { name: "Yeison Méndez", pts: 14 },
+              { name: "Dagaz", pts: 7 }
+            ],
+          },
+          ...Array.from({ length: 3 }, (_, j) => ({
+            id: j + 8,
+            name: `Fecha ${j + 8}`,
             jugadores: Array.from({ length: 9 }, (_, i) => ({
               name: `Jugador #${String(i + 1).padStart(2, "0")}`,
               pts: 0,
