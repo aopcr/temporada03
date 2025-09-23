@@ -883,9 +883,23 @@
               { name: "Dagaz", pts: 7 }
             ],
           },
-          ...Array.from({ length: 3 }, (_, j) => ({
-            id: j + 8,
-            name: `Fecha ${j + 8}`,
+        {
+            id: 8,
+            name: "Fecha 8",
+            img: "ganadores/08.webp",
+            jugadores: [
+              { name: "Lety", pts: 49 },
+              { name: "Jean", pts: 42 },
+              { name: "Queso", pts: 35 },
+              { name: "Cristian", pts: 28 },
+              { name: "Kevin", pts: 21 },
+              { name: "Dagaz", pts: 14 },
+              { name: "Tony", pts: 7 }
+            ],
+          },
+          ...Array.from({ length: 2 }, (_, j) => ({
+            id: j + 9,
+            name: `Fecha ${j + 9}`,
             jugadores: Array.from({ length: 9 }, (_, i) => ({
               name: `Jugador #${String(i + 1).padStart(2, "0")}`,
               pts: 0,
