@@ -868,7 +868,6 @@
               { name: "Fantasma", pts: 11 },
             ],
           },
-          ,
           {
             id: 7,
             name: "Fecha 7",
@@ -897,9 +896,36 @@
               { name: "Tony", pts: 7 }
             ],
           },
-          ...Array.from({ length: 2 }, (_, j) => ({
-            id: j + 9,
-            name: `Fecha ${j + 9}`,
+        {
+            id: 9,
+            name: "Fecha 9",
+            img: "ganadores/09.webp",
+            jugadores: [
+              { name: "Lety", pts: 400 },
+              { name: "Meme", pts: 380 },
+              { name: "More", pts: 360 },
+              { name: "Wayo", pts: 340 },
+              { name: "Martín Cubero", pts: 320 },
+              { name: "Jean", pts: 300 },
+              { name: "Dario", pts: 280 },
+              { name: "Marco", pts: 260 },
+              { name: "Aspi", pts: 240 },
+              { name: "Cristian", pts: 220 },
+              { name: "Parce", pts: 200 },
+              { name: "Ale Morera", pts: 180 },
+              { name: "Tiza", pts: 160 },
+              { name: "Queso", pts: 140 },
+              { name: "Dagaz", pts: 120 },
+              { name: "Dorling", pts: 100 },
+              { name: "Tito", pts: 80 },
+              { name: "Pericles", pts: 60 },
+              { name: "Jorge Ramírez", pts: 38 },
+              { name: "Berrocal", pts: 16 }
+            ],
+          },
+          ...Array.from({ length: 1 }, (_, j) => ({
+            id: j + 10,
+            name: `Fecha ${j + 10}`,
             jugadores: Array.from({ length: 9 }, (_, i) => ({
               name: `Jugador #${String(i + 1).padStart(2, "0")}`,
               pts: 0,
