@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -75,6 +74,7 @@
         margin: 0 auto;
         padding: 0 20px;
       }
+
       header {
         position: fixed;
         top: 0;
@@ -113,6 +113,7 @@
         color: #ddd;
         font-size: 1.5rem;
       }
+
       .hero {
         margin-top: 70px;
         position: relative;
@@ -121,8 +122,7 @@
       }
       .hero-img {
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -174,6 +174,205 @@
         height: 48px;
       }
 
+      /* === TEMPORADA 04 BANNER === */
+      .s04-banner {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(110deg, #1b1b1b, #101010 45%, #1b1b1b 55%);
+        border-top: 1px solid #222;
+        border-bottom: 1px solid #222;
+      }
+      .s04-inner {
+        position: relative;
+        padding: 1rem 0;
+      }
+      .s04-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #ffe08a, #f1c40f, #d4af37);
+        color: #000;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        box-shadow: 0 0 0 2px #000 inset, 0 4px 18px rgba(241, 196, 15, 0.25);
+        animation: glowPulse 2.5s ease-in-out infinite;
+      }
+      .s04-sub {
+        color: #cfcfcf;
+        margin-top: 0.5rem;
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+      @keyframes glowPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 2px #000 inset, 0 4px 18px rgba(241, 196, 15, 0.25);
+        }
+        50% {
+          box-shadow: 0 0 0 2px #000 inset, 0 6px 26px rgba(241, 196, 15, 0.45);
+        }
+      }
+
+      /* === FINAL TABLE ANNOUNCEMENT === */
+      .final-table {
+        position: relative;
+        background: #0a0a0a;
+        padding: 3rem 0;
+        border-top: 1px solid #151515;
+        border-bottom: 1px solid #151515;
+        overflow: hidden;
+      }
+      .final-heading {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .final-badge {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        background: #141414;
+        border: 1px solid #2b2b2b;
+        color: #f1c40f;
+      }
+      .final-title {
+        font-size: 2.4rem;
+        margin-top: 0.6rem;
+        background: linear-gradient(90deg, #fff, #f1c40f, #fff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 14px rgba(241, 196, 15, 0.15);
+      }
+      .final-typing {
+        margin: 0.5rem auto 1.5rem;
+        color: #cfcfcf;
+        opacity: 0.95;
+        text-align: center;
+        min-height: 1.4em;
+        font-size: 1.05rem;
+      }
+
+      .seats-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .seat-card {
+        position: relative;
+        background: rgba(26, 26, 26, 0.8);
+        border: 1px solid rgba(51, 51, 51, 0.9);
+        border-radius: 14px;
+        padding: 1rem;
+        overflow: hidden;
+        transform: translateY(12px) scale(0.98);
+        opacity: 0;
+        transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s;
+      }
+      .seat-card.in {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      .seat-card::before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: 16px;
+        background: conic-gradient(
+          from 180deg,
+          #f1c40f22,
+          transparent 30%,
+          #f1c40f22 60%,
+          transparent 90%
+        );
+        filter: blur(6px);
+        z-index: 0;
+        opacity: 0.35;
+        pointer-events: none;
+      }
+      .seat-top {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+      .seat-pos {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: #000;
+        background: linear-gradient(90deg, #ffe08a, #f1c40f, #f7d774);
+        padding: 0.25rem 0.6rem;
+        border-radius: 999px;
+        box-shadow: inset 0 0 0 2px #000;
+      }
+      .seat-name {
+        position: relative;
+        z-index: 1;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+      }
+      .seat-points {
+        position: relative;
+        z-index: 1;
+        color: #bdbdbd;
+        font-size: 0.95rem;
+        margin-top: 0.25rem;
+      }
+      .seat-chip {
+        position: absolute;
+        right: -20px;
+        bottom: -20px;
+        width: 120px;
+        height: 120px;
+        opacity: 0.12;
+        filter: blur(0.2px);
+        background: radial-gradient(circle at 35% 35%, #f1c40f 0 24%, #0000 25%),
+          radial-gradient(circle at 65% 65%, #f1c40f 0 24%, #0000 25%),
+          conic-gradient(#0000 0 25%, #f1c40f55 0 50%, #0000 0 75%, #f1c40f55 0);
+        border-radius: 50%;
+      }
+
+      .seat-card.podium {
+        background: linear-gradient(180deg, #1a1a1a, #101010);
+        border-color: #3a3a3a;
+      }
+      .seat-card.gold .seat-pos {
+        background: linear-gradient(90deg, #fff6c9, #ffd44d, #ffec99);
+      }
+      .seat-card.silver .seat-pos {
+        background: linear-gradient(90deg, #e8e8e8, #cfcfcf, #f5f5f5);
+      }
+      .seat-card.bronze .seat-pos {
+        background: linear-gradient(90deg, #e6c199, #d6a26d, #f0d1b3);
+      }
+
+      .final-note {
+        text-align: center;
+        color: #9f9f9f;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+
+      /* Confetti canvas */
+      .confetti-canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Secciones base */
       .tournament-info {
         padding: 3rem 0;
         background: #111;
@@ -388,6 +587,13 @@
         color: #bbb;
         font-size: 0.95rem;
       }
+      .trophy-figure video.trophy-video {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid #333;
+      }
 
       .sponsors {
         padding: 3rem 0;
@@ -517,12 +723,10 @@
         background: rgba(17, 17, 17, 0.95);
       }
 
-      .trophy-figure video.trophy-video {
-        width: 100%;
-        height: 480px;
-        object-fit: cover;
-        border-radius: 8px;
-        border: 2px solid #333;
+      @media (min-width: 768px) {
+        .seats-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
     </style>
   </head>
@@ -565,6 +769,23 @@
     >
       <img src="whatsapp.svg" alt="WhatsApp" />
     </a>
+
+    <!-- Final Table Announcement -->
+    <section class="final-table" id="final">
+      <canvas class="confetti-canvas" id="s04Confetti"></canvas>
+      <canvas class="confetti-canvas" id="finalConfetti"></canvas>
+      <div class="container">
+        <div class="final-heading">
+          <span class="final-badge">Mesa Final</span>
+          <h2 class="final-title">Temporada 03 · Clasificados</h2>
+          <p class="final-typing" id="finalTyping"></p>
+        </div>
+        <div class="seats-grid" id="seatsGrid"></div>
+        <div class="final-note">
+          Criterios: Puntos → 1.º lugares → Podios → Nombre (A–Z).
+        </div>
+      </div>
+    </section>
 
     <!-- Tournament Info -->
     <section class="tournament-info" id="info">
@@ -667,9 +888,7 @@
             playsinline
             class="trophy-video"
           ></video>
-          <figcaption>
-            Trofeo Campeón Temporada 03 AOP.
-          </figcaption>
+          <figcaption>Trofeo Campeón Temporada 03 AOP.</figcaption>
         </figure>
       </div>
     </section>
@@ -756,7 +975,7 @@
         { name: "Efrén", pts: 16 },
       ];
 
-      // Fechas 2-10 con resultados reales para Fecha 2 y 3
+      // Fechas 2-10
       const fechas = [
         {
           id: 1,
@@ -828,110 +1047,123 @@
             { name: "Jean", pts: 52 },
             { name: "Pelusa", pts: 39 },
             { name: "Lety", pts: 26 },
-            { name: "Chespi", pts: 13 }
+            { name: "Chespi", pts: 13 },
           ],
         },
-          {
-            id: 5,
-            name: "Fecha 5",
-            img: "ganadores/05.webp",
-            jugadores: [
-              { name: "Meme", pts: 144 },
-              { name: "Cristian", pts: 132 },
-              { name: "Dario", pts: 120 },
-              { name: "Martín Cubero", pts: 108 },
-              { name: "Brandon", pts: 96 },
-              { name: "Lety", pts: 84 },
-              { name: "Jackson", pts: 72 },
-              { name: "Yeison Méndez", pts: 60 },
-              { name: "Jose Murillo", pts: 48 },
-              { name: "Queso", pts: 36 },
-              { name: "Dorling", pts: 24 },
-              { name: "Kevin", pts: 12 },
-            ],
-          },
-          {
-            id: 6,
-            name: "Fecha 6",
-            img: "ganadores/06.webp",
-            jugadores: [
-              { name: "Lety", pts: 121 },
-              { name: "Dario", pts: 110 },
-              { name: "Queso", pts: 99 },
-              { name: "dei", pts: 88 },
-              { name: "Dagaz", pts: 77 },
-              { name: "Chespi", pts: 66 },
-              { name: "Jose Murillo", pts: 55 },
-              { name: "Meme", pts: 44 },
-              { name: "Cristian", pts: 33 },
-              { name: "Yeison Méndez", pts: 22 },
-              { name: "Fantasma", pts: 11 },
-            ],
-          },
-          {
-            id: 7,
-            name: "Fecha 7",
-            img: "ganadores/07.webp",
-            jugadores: [
-              { name: "Lety", pts: 49 },
-              { name: "Cristian", pts: 42 },
-              { name: "Queso", pts: 35 },
-              { name: "Ale Morera", pts: 28 },
-              { name: "Coco", pts: 21 },
-              { name: "Yeison Méndez", pts: 14 },
-              { name: "Dagaz", pts: 7 }
-            ],
-          },
         {
-            id: 8,
-            name: "Fecha 8",
-            img: "ganadores/08.webp",
-            jugadores: [
-              { name: "Lety", pts: 49 },
-              { name: "Jean", pts: 42 },
-              { name: "Queso", pts: 35 },
-              { name: "Cristian", pts: 28 },
-              { name: "Kevin", pts: 21 },
-              { name: "Dagaz", pts: 14 },
-              { name: "Tony", pts: 7 }
-            ],
-          },
+          id: 5,
+          name: "Fecha 5",
+          img: "ganadores/05.webp",
+          jugadores: [
+            { name: "Meme", pts: 144 },
+            { name: "Cristian", pts: 132 },
+            { name: "Dario", pts: 120 },
+            { name: "Martín Cubero", pts: 108 },
+            { name: "Brandon", pts: 96 },
+            { name: "Lety", pts: 84 },
+            { name: "Jackson", pts: 72 },
+            { name: "Yeison Méndez", pts: 60 },
+            { name: "Jose Murillo", pts: 48 },
+            { name: "Queso", pts: 36 },
+            { name: "Dorling", pts: 24 },
+            { name: "Kevin", pts: 12 },
+          ],
+        },
         {
-            id: 9,
-            name: "Fecha 9",
-            img: "ganadores/09.webp",
-            jugadores: [
-              { name: "Lety", pts: 400 },
-              { name: "Meme", pts: 380 },
-              { name: "More", pts: 360 },
-              { name: "Wayo", pts: 340 },
-              { name: "Martín Cubero", pts: 320 },
-              { name: "Jean", pts: 300 },
-              { name: "Dario", pts: 280 },
-              { name: "Marco", pts: 260 },
-              { name: "Aspi", pts: 240 },
-              { name: "Cristian", pts: 220 },
-              { name: "Parce", pts: 200 },
-              { name: "Ale Morera", pts: 180 },
-              { name: "Tiza", pts: 160 },
-              { name: "Queso", pts: 140 },
-              { name: "Dagaz", pts: 120 },
-              { name: "Dorling", pts: 100 },
-              { name: "Tito", pts: 80 },
-              { name: "Pericles", pts: 60 },
-              { name: "Jorge Ramírez", pts: 38 },
-              { name: "Berrocal", pts: 16 }
-            ],
-          },
-          ...Array.from({ length: 1 }, (_, j) => ({
-            id: j + 10,
-            name: `Fecha ${j + 10}`,
-            jugadores: Array.from({ length: 9 }, (_, i) => ({
-              name: `Jugador #${String(i + 1).padStart(2, "0")}`,
-              pts: 0,
-            })),
-          })),
-        ];
+          id: 6,
+          name: "Fecha 6",
+          img: "ganadores/06.webp",
+          jugadores: [
+            { name: "Lety", pts: 121 },
+            { name: "Dario", pts: 110 },
+            { name: "Queso", pts: 99 },
+            { name: "dei", pts: 88 },
+            { name: "Dagaz", pts: 77 },
+            { name: "Chespi", pts: 66 },
+            { name: "Jose Murillo", pts: 55 },
+            { name: "Meme", pts: 44 },
+            { name: "Cristian", pts: 33 },
+            { name: "Yeison Méndez", pts: 22 },
+            { name: "Fantasma", pts: 11 },
+          ],
+        },
+        {
+          id: 7,
+          name: "Fecha 7",
+          img: "ganadores/07.webp",
+          jugadores: [
+            { name: "Lety", pts: 49 },
+            { name: "Cristian", pts: 42 },
+            { name: "Queso", pts: 35 },
+            { name: "Ale Morera", pts: 28 },
+            { name: "Coco", pts: 21 },
+            { name: "Yeison Méndez", pts: 14 },
+            { name: "Dagaz", pts: 7 },
+          ],
+        },
+        {
+          id: 8,
+          name: "Fecha 8",
+          img: "ganadores/08.webp",
+          jugadores: [
+            { name: "Lety", pts: 49 },
+            { name: "Jean", pts: 42 },
+            { name: "Queso", pts: 35 },
+            { name: "Cristian", pts: 28 },
+            { name: "Kevin", pts: 21 },
+            { name: "Dagaz", pts: 14 },
+            { name: "Tony", pts: 7 },
+          ],
+        },
+        {
+          id: 9,
+          name: "Fecha 9",
+          img: "ganadores/09.webp",
+          jugadores: [
+            { name: "Lety", pts: 400 },
+            { name: "Meme", pts: 380 },
+            { name: "More", pts: 360 },
+            { name: "Wayo", pts: 340 },
+            { name: "Martín Cubero", pts: 320 },
+            { name: "Jean", pts: 300 },
+            { name: "Dario", pts: 280 },
+            { name: "Marco", pts: 260 },
+            { name: "Aspi", pts: 240 },
+            { name: "Cristian", pts: 220 },
+            { name: "Parce", pts: 200 },
+            { name: "Ale Morera", pts: 180 },
+            { name: "Tiza", pts: 160 },
+            { name: "Queso", pts: 140 },
+            { name: "Dagaz", pts: 120 },
+            { name: "Dorling", pts: 100 },
+            { name: "Tito", pts: 80 },
+            { name: "Pericles", pts: 60 },
+            { name: "Jorge Ramírez", pts: 38 },
+            { name: "Berrocal", pts: 16 },
+          ],
+        },
+        {
+          id: 10,
+          name: "Fecha 10",
+          img: "ganadores/10.webp",
+          jugadores: [
+            { name: "Tambor", pts: 196 },
+            { name: "Meme", pts: 182 },
+            { name: "Jean", pts: 168 },
+            { name: "Wayo", pts: 154 },
+            { name: "Quik", pts: 140 },
+            { name: "Lety", pts: 126 },
+            { name: "Martín Cubero", pts: 112 },
+            { name: "Jorge Ramírez", pts: 98 },
+            { name: "Lali", pts: 84 },
+            { name: "More", pts: 70 },
+            { name: "Jose Murillo", pts: 56 },
+            { name: "Cristian", pts: 42 },
+            { name: "Queso", pts: 28 },
+            { name: "Chespi", pts: 14 },
+          ],
+        },
+      ];
 
       // === STATS GENERALES: puntos, #1, podios ===
       function computeGeneralStats(fechas) {
@@ -967,6 +1199,143 @@
 
       const generalStats = computeGeneralStats(fechas).sort(generalComparator);
 
+      // === MESA FINAL (Top N) ===
+      const FINAL_TABLE_SIZE = 9; // ajustable si deseas 8 o 10
+      function buildFinalTable(top) {
+        const grid = document.getElementById("seatsGrid");
+        grid.innerHTML = "";
+        top.forEach((p, i) => {
+          const card = document.createElement("div");
+          card.className = "seat-card";
+          if (i < 3) card.classList.add("podium");
+          if (i === 0) card.classList.add("gold");
+          if (i === 1) card.classList.add("silver");
+          if (i === 2) card.classList.add("bronze");
+
+          const topBar = document.createElement("div");
+          topBar.className = "seat-top";
+
+          const pos = document.createElement("div");
+          pos.className = "seat-pos";
+          pos.textContent = `#${i + 1}`;
+          topBar.appendChild(pos);
+
+          const name = document.createElement("div");
+          name.className = "seat-name";
+          name.textContent = p.name;
+
+          const pts = document.createElement("div");
+          pts.className = "seat-points";
+          pts.textContent = `${p.points} pts • 🏆 ${p.wins} • Top 3: ${p.podiums}`;
+
+          const chip = document.createElement("div");
+          chip.className = "seat-chip";
+
+          card.appendChild(topBar);
+          card.appendChild(name);
+          card.appendChild(pts);
+          card.appendChild(chip);
+          grid.appendChild(card);
+
+          // entrada animada escalonada
+          setTimeout(() => card.classList.add("in"), 80 * i);
+        });
+      }
+
+      // Mensaje tipo "typing"
+      function typeLine(el, text, speed = 28) {
+        el.textContent = "";
+        let i = 0;
+        const timer = setInterval(() => {
+          el.textContent = text.slice(0, i++);
+          if (i > text.length) clearInterval(timer);
+        }, speed);
+      }
+
+      // Confetti simple
+      function launchConfetti(canvas, durationMs = 3500, density = 140) {
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        const dpr = window.devicePixelRatio || 1;
+        const resize = () => {
+          canvas.width = canvas.clientWidth * dpr;
+          canvas.height = canvas.clientHeight * dpr;
+        };
+        resize();
+        const pieces = Array.from({ length: density }, () => ({
+          x: Math.random() * canvas.width,
+          y: -Math.random() * canvas.height * 0.6,
+          w: 6 + Math.random() * 8,
+          h: 8 + Math.random() * 14,
+          vy: 1 + Math.random() * 3,
+          vx: -1 + Math.random() * 2,
+          rot: Math.random() * Math.PI,
+          vr: -0.1 + Math.random() * 0.2,
+          color: `hsl(${Math.random() * 60 + 40} 90% ${
+            50 + Math.random() * 30
+          }%)`,
+        }));
+        let start = null;
+        function frame(ts) {
+          if (!start) start = ts;
+          const t = ts - start;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          pieces.forEach((p) => {
+            p.x += p.vx * dpr;
+            p.y += p.vy * dpr;
+            p.rot += p.vr;
+            if (p.y > canvas.height + 40) {
+              p.y = -20;
+              p.x = Math.random() * canvas.width;
+            }
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.rot);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+            ctx.restore();
+          });
+          if (t < durationMs) requestAnimationFrame(frame);
+        }
+        requestAnimationFrame(frame);
+        window.addEventListener("resize", resize);
+      }
+
+      const topFinal = generalStats.slice(0, FINAL_TABLE_SIZE);
+      buildFinalTable(topFinal);
+
+      // Confetti on reveal for S04 banner and Final table
+      const s04Canvas = document.getElementById("s04Confetti");
+      const finalCanvas = document.getElementById("finalConfetti");
+
+      // función de loop
+      function startConfettiLoop(canvas, interval, duration, intensity) {
+        launchConfetti(canvas, duration, intensity); // primer disparo inmediato
+        return setInterval(() => {
+          launchConfetti(canvas, duration, intensity);
+        }, interval);
+      }
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              if (e.target === s04Canvas) {
+                startConfettiLoop(s04Canvas, 6000, 2200, 110);
+              }
+              if (e.target === finalCanvas) {
+                startConfettiLoop(finalCanvas, 9000, 3600, 160);
+              }
+              // ya no lo "unobserve", para que pueda seguir repitiendo
+            }
+          });
+        },
+        { threshold: 0.25 }
+      );
+
+      io.observe(s04Canvas);
+      io.observe(finalCanvas);
+
       // === TABS ===
       const tabsContainer = document.getElementById("tabs");
       const allTabs = [{ id: 0, name: "General" }].concat(fechas);
@@ -981,13 +1350,13 @@
 
       const tablesContainer = document.getElementById("tables");
 
-      // === TABLA GENERAL (encabezados: "#", "Jugador", "Pts", "#1", "Top 3") ===
+      // === TABLA GENERAL ===
       const generalRows = generalStats.map((s, i) => ({
         "#": i + 1,
         jugador: s.name,
         pts: s.points,
         "🏆": s.wins,
-        "top 3": s.podiums, // createTable usa toLowerCase() para mapear "Top 3"
+        "top 3": s.podiums,
       }));
       const tableGen = createTable(generalRows, [
         "#",
@@ -999,25 +1368,19 @@
       tableGen.id = "general";
       tableGen.classList.add("ranking-table", "active");
 
-      // Nota de criterios de desempate (solo en General)
       const tieNote = document.createElement("div");
       tieNote.className = "tie-note";
-      tieNote.innerHTML = `
-        <strong>Criterios de desempate:</strong>
-        Puntos &rarr; 🏆 (más primeros lugares) &rarr; Top&nbsp;3 (más podios) &rarr; Nombre (A–Z).
-      `;
+      tieNote.innerHTML = `<strong>Criterios de desempate:</strong> Puntos &rarr; 🏆 (más primeros lugares) &rarr; Top&nbsp;3 (más podios) &rarr; Nombre (A–Z).`;
       tableGen.appendChild(tieNote);
       tablesContainer.appendChild(tableGen);
 
       // === GANADOR POR FECHA + TABLAS POR FECHA ===
       fechas.forEach((f) => {
-        // Winner banner
         const winnerBlock = createWinnerBlock(f);
         winnerBlock.id = `winnerfecha${f.id}`;
-        winnerBlock.classList.add("ranking-table"); // para toggling por pestañas
+        winnerBlock.classList.add("ranking-table");
         tablesContainer.appendChild(winnerBlock);
 
-        // Tabla de resultados por fecha
         const rows = f.jugadores.map((pl, i) => ({
           posición: i + 1,
           jugador: pl.name,
@@ -1061,7 +1424,6 @@
       }
 
       function createWinnerBlock(fecha) {
-        // Detecta ganadores (maneja empates); si todos 0 => placeholder
         let maxPts = 0;
         fecha.jugadores.forEach((j) => {
           if (j.pts > maxPts) maxPts = j.pts;
@@ -1093,7 +1455,6 @@
           img.alt = w.placeholder
             ? `Ganador(a) ${fecha.name} - Próximamente`
             : `Ganador(a) ${fecha.name} - ${w.name}`;
-          // Marcar para lightbox:
           img.setAttribute("data-zoomable", "true");
           img.setAttribute("data-zoom-src", img.src);
           const caption = w.placeholder
@@ -1122,15 +1483,13 @@
           .forEach((b) => b.classList.remove("active"));
         e.currentTarget.classList.add("active");
 
-        // Oculta todo (tablas y banners)
         document
           .querySelectorAll(".ranking-table")
           .forEach((el) => el.classList.remove("active"));
 
         const targetId = e.currentTarget.dataset.target;
-        // Muestra tabla seleccionada
         document.getElementById(targetId).classList.add("active");
-        // Si es una fecha, muestra su banner de ganador
+
         document
           .querySelectorAll(".winner-block")
           .forEach((el) => el.classList.remove("active"));
@@ -1191,7 +1550,6 @@
         openLightboxByIndex(currentIndex + 1);
       }
 
-      // Delegación de evento para abrir (incluye los creados dinámicamente)
       document.addEventListener("click", (e) => {
         const target = e.target;
         if (target && target.matches('[data-zoomable="true"]')) {
@@ -1203,17 +1561,14 @@
         }
       });
 
-      // Controles
       lbClose.addEventListener("click", closeLightbox);
       lbPrev.addEventListener("click", showPrev);
       lbNext.addEventListener("click", showNext);
 
-      // Cerrar al hacer clic en fondo
       lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) closeLightbox();
       });
 
-      // Teclado
       document.addEventListener("keydown", (e) => {
         if (!lightbox.classList.contains("open")) return;
         if (e.key === "Escape") closeLightbox();
@@ -1221,8 +1576,7 @@
         if (e.key === "ArrowRight") showNext();
       });
 
-      // Inicializar zoomables después de construir DOM dinámico
-      // (winners por fecha y tablas ya insertados arriba)
+      // Inicializar zoomables
       collectZoomables();
     </script>
   </body>
